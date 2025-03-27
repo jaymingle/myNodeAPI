@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const ProductSchema = mongoose.Schema(
+const SchoolSchema = mongoose.Schema(
     {
         name: {
                 type: String,
@@ -28,3 +28,6 @@ const ProductSchema = mongoose.Schema(
             timestamps: true
     }
 )
+
+const School = mongoose.model('School', SchoolSchema)
+export default School;
