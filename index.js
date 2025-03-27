@@ -72,6 +72,16 @@ app.put('/products/update/:id', async (req, res) => {
 })
 
 //Delete
+app.delete('/products/product/:id', async (req, res) => {
+    const {id} = req.params
+
+    try{
+
+    }catch(error){
+        res.status(500).json({message: error.message})
+    }
+
+})
 
 
 app.listen(port, () => console.log('Server is running'))
