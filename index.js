@@ -76,6 +76,13 @@ app.delete('/products/product/:id', async (req, res) => {
     const {id} = req.params
 
     try{
+        const deleteSchool = await School.findByIdAndDelete(id)
+
+        if(!deleteSchool){
+            res.status(404).json({message: 'Product Not Found!!!'})
+        }
+
+        res.status(200).json({message: 'Product Created Successfully!!!'})
 
     }catch(error){
         res.status(500).json({message: error.message})
