@@ -46,7 +46,7 @@ app.get('/products/product/:id', async (req, res) => {
     const {id} = req.params
 
     try{
-        const school = await School.findById({id: id})
+        const school = await School.findById(id)
         res.status(200).json(school)
     }catch(error){
         res.status(500).json({message: error.message})
