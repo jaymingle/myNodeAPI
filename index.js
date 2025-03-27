@@ -18,6 +18,7 @@ app.get('/', (req, res) => {
 app.get('/products/create_product', async (req, res) => {
     try{
 
+
     }catch(error){
         res.status(500).json({message: error.message})
     }
