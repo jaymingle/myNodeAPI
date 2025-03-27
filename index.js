@@ -55,7 +55,21 @@ app.get('/products/product/:id', async (req, res) => {
 })
 
 //Update
+app.put('/products/update/:id', async (req, res) => {
+    const {id} = req.params
+    try{
+        const updateSchool = await School.findByIdAndUpdate(id, req.body)
 
+        if(!updateSchool){
+            res.status(404).json({message: 'School Not Found!!!'})
+        }
+        const updatedSchool = await School.findById(id)
+        res.status(200).json(updatedSchool)
+
+    }catch(error){
+        res.status(500).json({message: error.message})
+    }
+})
 
 //Delete
 
